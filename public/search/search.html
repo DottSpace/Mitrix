@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search</title>
+  <link rel="stylesheet" href="search.css">
+</head>
+<body>
+
+  <!-- Header con il logo e la nazione -->
+  <header>
+    <div id="logo">
+      <img src="logo.png" alt="Logo">
+    </div>
+    <div id="country">Caricamento nazione...</div>
+  </header>
+
+  <!-- Barra di ricerca -->
+  <div class="search-bar">
+    <input type="text" id="search-input" placeholder="Cerca...">
+    <span class="search-icon" id="search-btn">📤</span> <!-- Emoji per ricerca -->
+    <span id="microphone">🎙️</span> <!-- Emoji per microfono -->
+  </div>
+
+  <!-- Risultati della ricerca -->
+  <div id="search-results">
+    <!-- I risultati della ricerca verranno mostrati qui -->
+  </div>
+
+  <script src="search.js"></script>
+</body>
+</html>

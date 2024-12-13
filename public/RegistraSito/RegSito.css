@@ -1,0 +1,100 @@
+/* Impostazioni generali del corpo della pagina */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f7fa; /* Colore di sfondo chiaro */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Contenitore del modulo */
+.container {
+  width: 100%;
+  max-width: 480px; /* Massima larghezza per desktop */
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+
+/* Titolo principale */
+h1 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Etichette dei campi di input */
+label {
+  display: block;
+  font-size: 1rem;
+  color: #333;
+  text-align: left;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* Stile per gli input e la textarea */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 20px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+}
+
+/* Focus sugli input */
+input:focus, textarea:focus {
+  border-color: #4CAF50;
+  background-color: #fff;
+  outline: none;
+}
+
+/* Pulsante per inviare il modulo */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover sul pulsante */
+button:hover {
+  background-color: #45a049;
+}
+
+/* Classi aggiuntive per migliorare la spaziatura e allineamento */
+.form-group {
+  margin-bottom: 20px;
+}
+
+textarea {
+  resize: vertical; /* Permette di ridimensionare solo in verticale */
+  min-height: 120px;
+}
+
+/* Modifica per i piccoli schermi (mobile) */
+@media (max-width: 480px) {
+  .container {
+      padding: 20px;
+      width: 90%;
+  }
+  h1 {
+      font-size: 1.6rem;
+  }
+}

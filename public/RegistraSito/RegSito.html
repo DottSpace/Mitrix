@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registra il Tuo Sito</title>
+  <link rel="stylesheet" href="RegSito.css"> <!-- Aggiungi il tuo file CSS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script> <!-- Carica EmailJS SDK -->
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div id="logo">
+        <img src="logo.png" alt="Logo">
+      </div>
+    </header>
+  
+    <h1>Registra il Tuo Sito!</h1>
+    <form id="register-site-form">
+      <div class="form-group">
+        <label for="site-name">Nome del Sito</label>
+        <input type="text" id="site-name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="site-url">URL del Sito</label>
+        <input type="url" id="site-url" name="url" required>
+      </div>
+      <div class="form-group">
+        <label for="site-description">Descrizione del Sito</label>
+        <textarea id="site-description" name="description" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="username">Nome Utente</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Utente</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <button type="submit">Registra Sito</button>
+    </form>
+  </div>
+
+  <script type="text/javascript">
+     // Inizializza EmailJS con la tua public key
+     (function(){
+        emailjs.init("-DRwAuk1F7r-cOyQ8"); // Sostituisci con la tua Public Key
+     })();
+  </script>
+
+  <script type="text/javascript">
+     // Funzione per inviare l'email
+     function sendEmail() {
+         const templateParams = {
+             site_name: document.getElementById('site-name').value,
+             site_url: document.getElementById('site-url').value,
+             site_description: document.getElementById('site-description').value,
+             username: document.getElementById('username').value,
+             email: document.getElementById('email').value
+         };
+
+         // Invia l'email tramite il service ID e il template ID
+         emailjs.send('service_4rekc7l', 'template_nqbrifp', templateParams)
+         .then(function(response) {
+             console.log('Successo:', response);
+             alert('Email inviata con successo!, oggi alle 12:00 di sera il tuo sito sarà disponibile!');
+         }, function(error) {
+             console.log('Errore:', error);
+             alert('Errore nell\'invio dell\'email. Riprova!');
+         });
+     }
+
+     // Aggiungi l'evento di invio del modulo
+     document.getElementById('register-site-form').addEventListener('submit', function(event) {
+         event.preventDefault();  // Previene l'invio normale del form
+         sendEmail();  // Chiama la funzione di invio dell'email
+     });
+  </script>
+</body>
+</html>

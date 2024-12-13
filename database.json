@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Google",
+    "url": "https://www.google.com",
+    "description": "Motore di ricerca",
+    "clicks": 58
+  },
+  {
+    "name": "YouTube",
+    "url": "https://www.youtube.com",
+    "description": "Piattaforma video",
+    "clicks": 78
+  }
+]
